@@ -5,6 +5,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +46,18 @@ public class VendingMachineApplicationTest {
     @Test
     public void displayMoreSelectionsIfCoinsInsertedGreater(){
         Assert.assertEquals(3, vendingMachineService.getAvailableOptions(3.1).size());
+    }
+
+    @Test
+    public void shouldDispenseChangeIfMoreCoinsInserted(){
+        Assert.assertEquals(new BigDecimal(0.9,
+                new MathContext(1, RoundingMode.HALF_EVEN)), vendingMachineService.dispenseChange(4.0, "3"));
+    }
+
+    @Test
+    public void shouldDispenseZeroChangeIfExactCoinsInserted(){
+        Assert.assertEquals(new BigDecimal(0.0,
+                new MathContext(1, RoundingMode.HALF_EVEN)), vendingMachineService.dispenseChange(3.1, "3"));
     }
 
 }
