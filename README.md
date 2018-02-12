@@ -9,3 +9,28 @@ The specifications are
 3. App must not allow the user to enter invalid currency
 4. App must ensure that user has entered the correct amount of money prior to prompting for their selection
 5.  App should handle the condition if the user enters too much money
+
+
+Example:
+
+Vending Machine Started
+Please insert coin. Accepted coins : 0.1, 0.2, 0.5, 1, 2
+2
+Current balance is '2.0'
+1. Organic Raw $2
+4. Insert more coins
+4
+Please insert coin. Accepted coins : 0.1, 0.2, 0.5, 1, 2
+2
+Current balance is '4.0'
+1. Organic Raw $2
+2. Caramel $2.5
+3. Hazelnut $3.1
+3
+Please collect your chocolate
+Please collect your change : 0.9
+
+Assumption:
+
+Out of range selections in the selection menu are not handled. Vending machine will display only available options and other inputs can not be entered.
+
