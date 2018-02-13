@@ -34,3 +34,17 @@ Assumption:
 
 Out of range selections in the selection menu are not handled. Vending machine will display only available options and other inputs can not be entered.
 
+Instruction to run:
+
+Pre requisites : Java 1.8, Apache maven
+
+Steps to run the application :
+
+1. Clone the maven project ChocolateVendingMachine from git repository
+2. Package using the following command
+  mvn clean compile package
+3. Run jar using the following command
+java -jar target/ChocolateVendingMachine-1.0-SNAPSHOT.jar
+4. Key in the inputs
+
+
